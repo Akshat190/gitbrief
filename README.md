@@ -51,6 +51,16 @@ Found 13 commits across 2 repositories
 pip install gitbrief
 ```
 
+### With OpenAI support
+```bash
+pip install gitbrief[openai]
+```
+
+### With Anthropic support
+```bash
+pip install gitbrief[anthropic]
+```
+
 ### From source
 ```bash
 pip install -e .
