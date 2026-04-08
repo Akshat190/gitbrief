@@ -1,5 +1,10 @@
 # gitbrief 🧠
 
+[![PyPI version](https://img.shields.io/pypi/v/gitbrief)](https://pypi.org/project/gitbrief/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/Akshat190/gitbrief?style=social)](https://github.com/Akshat190/gitbrief)
+
 Your daily developer standup — powered by your Git history.
 
 ---
@@ -17,27 +22,16 @@ All in seconds.
 
 ---
 
-## ⚡ Demo
+## ⚡ Quick Demo
 
-```
-+------------------------------+
-| [ Scanning repositories... ] |
-+------------------------------+
-Found 13 commits across 2 repositories
-+------------------------------+
-| [ Generating AI summary... ] |
-+------------------------------+
-+-  Yesterday  -+
-| - Refactored auth system |
-| - Updated payment API |
-+---------------+
-+---------------------  Risks  ----------------------+
-| ! Login edge case may not be handled |
-+----------------------------------------------------+
-+--------------  Next Steps  ------------+
-| > Test token validation |
-| > Complete payment error handling |
-+------------------------------------------+
+```bash
+# Install and run
+$ pip install gitbrief
+
+$ gitbrief today
+✓ Found 13 commits across 2 repositories
+✓ Generating AI summary...
+✓ Done in 3s
 ```
 
 **You'll be surprised how much you forget after 1 day.**
