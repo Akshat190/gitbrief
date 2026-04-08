@@ -1,22 +1,21 @@
 """Prompt templates for AI summarization."""
+
 from typing import List, Dict
 
 
 def get_summarization_prompt(commits: List[Dict]) -> str:
     """Generate prompt for summarizing Git commits."""
-    
+
     commit_summary = []
     for commit in commits:
         files_info = ""
         if commit.get("files"):
             files_info = f" (files: {', '.join(commit['files'][:5])}"
-            if len(commit['files']) > 5:
+            if len(commit["files"]) > 5:
                 files_info += f", +{len(commit['files']) - 5} more"
             files_info += ")"
-        
-        commit_summary.append(
-            f"- [{commit['repo']}] {commit['message']}{files_info}"
-        )
+
+        commit_summary.append(f"- [{commit['repo']}] {commit['message']}{files_info}")
 
     commits_text = "\n".join(commit_summary)
 
@@ -48,10 +47,10 @@ Be concise and actionable. Focus on what matters."""
 
 def get_week_summarization_prompt(commits: List[Dict]) -> str:
     """Generate prompt for weekly summary."""
-    
+
     by_day = {}
     for commit in commits:
-        day = commit.get('date', '')[:10]
+        day = commit.get("date", "")[:10]
         if day not in by_day:
             by_day[day] = []
         by_day[day].append(commit)
@@ -64,11 +63,11 @@ def get_week_summarization_prompt(commits: List[Dict]) -> str:
             if repo not in repo_groups:
                 repo_groups[repo] = []
             repo_groups[repo].append(c["message"])
-        
+
         summary = f"{day}:\n"
         for repo, msgs in repo_groups.items():
             summary += f"  [{repo}]: {len(msgs)} commits\n"
-        
+
         daily_summaries.append(summary)
 
     commits_text = "\n".join(daily_summaries)
@@ -92,5 +91,41 @@ Potential issues or unfinished work.
 What should be focused on next week.
 
 Be concise."""
+
+    return prompt
+
+
+def get_standup_prompt(commits: List[Dict]) -> str:
+    """Generate prompt for standup message (Yesterday / Today / Blockers)."""
+
+    commit_summary = []
+    for commit in commits[:10]:
+        files_info = ""
+        if commit.get("files"):
+            files_info = f" ({', '.join(commit['files'][:3])})"
+
+        commit_summary.append(f"- {commit['message']}{files_info}")
+
+    commits_text = "\n".join(commit_summary)
+
+    prompt = f"""You are a developer preparing a daily standup update.
+
+Based on these commits from yesterday:
+{commits_text}
+
+Generate a standup message in this exact format:
+
+## Yesterday
+- [What you completed]
+
+## Today
+- [What you plan to work on]
+
+## Blockers
+- [Any blockers or challenges]
+
+For "Today", infer logical next steps from the commits.
+For "Blockers", identify any risks or unfinished work.
+Be concise - 3-5 items per section max."""
 
     return prompt

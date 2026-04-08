@@ -67,6 +67,9 @@ gitbrief today
 # Weekly summary (last 7 days)
 gitbrief week
 
+# Generate standup message (viral feature!)
+gitbrief standup
+
 # Scan a specific repository
 gitbrief today --path /path/to/repo
 
@@ -75,6 +78,13 @@ gitbrief week --path /path/to/repos
 
 # Use different Ollama model
 gitbrief today --model mistral
+
+# Use OpenAI instead of Ollama
+gitbrief today --provider openai --model gpt-3.5-turbo
+
+# Export as JSON for scripting
+gitbrief today --json
+gitbrief standup --json
 
 # Show raw commits without AI
 gitbrief today --no-ai
@@ -87,8 +97,10 @@ gitbrief today --no-ai
 | Option | Alias | Description | Default |
 |--------|-------|-------------|---------|
 | `--path` | `-p` | Path to Git repo or directory | `.` |
-| `--model` | `-m` | Ollama model to use | `llama3` |
+| `--model` | `-m` | AI model to use | `llama3` |
+| `--provider` | - | AI provider: `ollama` or `openai` | `ollama` |
 | `--no-ai` | - | Skip AI, show raw commits | `false` |
+| `--json` | `-j` | Output as JSON | `false` |
 
 ---
 

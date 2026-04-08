@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.2.0] - 2026-04-08
+
+### Added
+- `gitbrief standup` - Generate ready-to-paste standup messages (Yesterday / Today / Blockers)
+- `--provider` flag - Switch between Ollama and OpenAI
+- `--json` / `-j` flag - Output as JSON for scripting
+- OpenAI API support (`--provider openai`)
+- Standup prompt for AI summarization
+
+### Changed
+- Updated version to 0.2.0
+- Enhanced CLI with new options
+
+---
+
 ## [0.1.0] - 2026-04-08
 
 ### Added
@@ -30,7 +45,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `gitbrief replay` - Timeline narration
 - `gitbrief explain` - Repository purpose explanation
 - Configuration file support
-- JSON output flag
 - Custom date range filters (--since/--until)
 - Local caching for progress tracking
 

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gitbrief"
-version = "0.1.0"
+version = "0.2.0"
 description = "Your daily developer standup - powered by your Git history"
 readme = "README.md"
 license = {text = "MIT"}
