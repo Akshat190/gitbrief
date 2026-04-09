@@ -41,7 +41,7 @@ def get_provider(provider: str, model: str = "llama3", **kwargs):
         "anthropic": AnthropicProvider,
     }
     provider_class = providers.get(provider, OllamaProvider)
-    return provider_class(model=model, **kwargs)
+    return provider_class(model=model, check_connection=False, **kwargs)
 
 
 __all__ = ["BaseProvider", "get_provider", "OllamaProvider", "OpenAIProvider", "AnthropicProvider"]
