@@ -20,13 +20,15 @@ class OllamaProvider:
         base_url: str = "http://localhost:11434",
         stream: bool = False,
         timeout: int = None,
+        check_connection: bool = True,
     ):
         self.model = model
         self.base_url = base_url
         self.stream = stream
         self.timeout = timeout or get_config_value("timeout", 120)
-        self._check_connection()
-        self._validate_model()
+        if check_connection:
+            self._check_connection()
+            self._validate_model()
 
     def _check_connection(self):
         """Check if Ollama is running."""
