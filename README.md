@@ -21,17 +21,23 @@ You open Git, scroll commits, and still feel unsure.
 
 ## ⚡ Quick Demo
 
-```bash
-# Install and run
-$ pip install gitbrief
+<img src="assets/gitbrief-gif.gif" width="600" alt="gitbrief demo"/>
 
-$ gitbrief today
-✓ Found 13 commits across 2 repositories
-✓ Generating AI summary...
-✓ Done in 3s
+```bash
+$ pip install gitbrief
+$ gitbrief standup
+**Yesterday:**
+- Enhanced AI output quality
+- Added deduplication and truncation
+
+**Today:**
+- Continue development
+
+**Blockers:**
+- None
 ```
 
-**You'll be surprised how much you forget after 1 day.**
+**Your standup ready in seconds.**
 
 ---
 
