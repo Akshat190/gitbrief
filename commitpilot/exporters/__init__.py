@@ -3,8 +3,8 @@
 from abc import ABC, abstractmethod
 from typing import Dict, Optional
 
-from gitbrief.exporters.markdown import MarkdownExporter
-from gitbrief.exporters.json import JSONExporter
+from commitpilot.exporters.markdown import MarkdownExporter
+from commitpilot.exporters.json import JSONExporter
 
 
 class BaseExporter(ABC):

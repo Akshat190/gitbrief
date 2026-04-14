@@ -6,7 +6,7 @@ import re
 import sys
 from typing import Dict, List
 
-from gitbrief.core.utils import get_config_value
+from commitpilot.core.utils import get_config_value
 
 try:
     from anthropic import Anthropic as AnthropicClient
@@ -68,7 +68,7 @@ class AnthropicProvider:
                 "next_steps": [],
             }
 
-        from gitbrief.ai.prompts import get_summarization_prompt
+        from commitpilot.ai.prompts import get_summarization_prompt
 
         prompt = get_summarization_prompt(commits)
         try:
@@ -89,7 +89,7 @@ class AnthropicProvider:
                 "blockers": ["Anthropic API key not set"],
             }
 
-        from gitbrief.ai.prompts import get_standup_prompt
+        from commitpilot.ai.prompts import get_standup_prompt
 
         prompt = get_standup_prompt(commits)
         try:

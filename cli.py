@@ -1,8 +1,8 @@
-"""CLI entry point for gitbrief - backward compatible shim."""
+"""CLI entry point for commitpilot - backward compatible shim."""
 
 import typer
 
-from gitbrief.cli import app
+from commitpilot.cli import app
 
 if __name__ == "__main__":
     app()

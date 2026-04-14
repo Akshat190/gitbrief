@@ -2,7 +2,7 @@
 
 from typing import Dict, List
 
-from gitbrief.ai.providers import get_provider, BaseProvider
+from commitpilot.ai.providers import get_provider, BaseProvider
 
 
 class Summarizer:

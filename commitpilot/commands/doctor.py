@@ -61,7 +61,7 @@ def check_commits_in_range(path, days=7):
 
 def check_config_file():
     """Check if config file is valid."""
-    from gitbrief.core.utils import load_config
+    from commitpilot.core.utils import load_config
 
     config_path = Path.home() / ".gitbrief.toml"
     if not config_path.exists():

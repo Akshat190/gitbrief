@@ -6,7 +6,7 @@ from rich.console import Console
 from rich.table import Table
 from datetime import datetime
 
-from gitbrief.core.memory import get_history
+from commitpilot.core.memory import get_history
 
 console = Console()
 
