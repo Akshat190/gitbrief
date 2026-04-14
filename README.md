@@ -9,16 +9,13 @@ Your daily developer standup — powered by your Git history.
 
 ---
 
-## ✨ What it does
+## ⚡ The Problem
 
-gitbrief scans your local repositories and tells you:
+Every day at standup:
 
-- What you worked on yesterday
-- What might be broken
-- What you should do next
-- Commit statistics and history
+“What did I actually do yesterday?”
 
-All in seconds.
+You open Git, scroll commits, and still feel unsure.
 
 ---
 
