@@ -5,10 +5,10 @@ import json
 from rich.console import Console
 from typing import Optional
 
-from gitbrief.core.git_reader import GitReader
-from gitbrief.ai import Summarizer
-from gitbrief.core.utils import load_config, get_config_value
-from gitbrief.exporters import get_exporter
+from commitpilot.core.git_reader import GitReader
+from commitpilot.ai import Summarizer
+from commitpilot.core.utils import load_config, get_config_value
+from commitpilot.exporters import get_exporter
 
 console = Console()
 config = load_config()

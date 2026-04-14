@@ -1,27 +1,30 @@
-"""Week command."""
+"""Today command."""
 
-import typer
 import json
+import typer
 from rich.console import Console
 from rich.panel import Panel
 from typing import Optional
 
-from gitbrief.core.git_reader import GitReader
-from gitbrief.ai import Summarizer
-from gitbrief.core.utils import load_config, get_config_value
-from gitbrief.exporters import get_exporter
+from commitpilot.core.git_reader import GitReader
+from commitpilot.ai import Summarizer
+from commitpilot.core.utils import load_config, get_config_value
+from commitpilot.exporters import get_exporter
 
 console = Console()
+VERSION = "0.1.0"
+AI_PROVIDERS = ["ollama", "openai", "anthropic"]
 config = load_config()
 
 
 def _resolve_arg(value, key, default):
+    """Resolve CLI arg with config fallback."""
     if value is not None:
         return value
     return get_config_value(key, default)
 
 
-def week_command(
+def today_command(
     path: Optional[str] = None,
     model: Optional[str] = None,
     provider: Optional[str] = None,
@@ -88,6 +91,7 @@ def week_command(
 
 
 def _display_commits(commits, json_output, export):
+    """Display raw commits."""
     if json_output:
         output = [
             {"repo": c["repo"], "message": c["message"], "author": c["author"], "date": c["date"]}
@@ -103,6 +107,7 @@ def _display_commits(commits, json_output, export):
 
 
 def _display_summary(summary: dict):
+    """Display the AI-generated summary."""
     if "yesterday" in summary and summary["yesterday"]:
         console.print(
             Panel.fit(
@@ -135,6 +140,7 @@ def _display_summary(summary: dict):
 
 
 def _export_output(path: str, summary: dict):
+    """Export output to file."""
     exporter = get_exporter("markdown")
     exporter.export(summary, path)
     console.print(f"[green]Exported to {path}[/green]")

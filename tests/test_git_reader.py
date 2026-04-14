@@ -2,7 +2,7 @@
 
 import pytest
 
-from gitbrief.core.git_reader import GitReader
+from commitpilot.core.git_reader import GitReader
 
 
 def test_get_commits_single_repo(fake_repo):

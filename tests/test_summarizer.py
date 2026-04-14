@@ -2,7 +2,7 @@
 
 import pytest
 
-from gitbrief.ai.summarizer import Summarizer
+from commitpilot.ai.summarizer import Summarizer
 
 
 def test_summarize_empty_commits():

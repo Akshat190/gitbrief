@@ -5,8 +5,8 @@ from rich.console import Console
 from rich.table import Table
 from typing import Optional
 
-from gitbrief.core.git_reader import GitReader
-from gitbrief.core.utils import load_config, get_config_value
+from commitpilot.core.git_reader import GitReader
+from commitpilot.core.utils import load_config, get_config_value
 
 console = Console()
 config = load_config()

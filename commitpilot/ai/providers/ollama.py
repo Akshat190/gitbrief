@@ -14,8 +14,8 @@ try:
 except ImportError:
     JSON_REPAIR_AVAILABLE = False
 
-from gitbrief.ai.prompts import get_summarization_prompt, get_standup_prompt
-from gitbrief.core.utils import get_config_value
+from commitpilot.ai.prompts import get_summarization_prompt, get_standup_prompt
+from commitpilot.core.utils import get_config_value
 
 
 class OllamaProvider:

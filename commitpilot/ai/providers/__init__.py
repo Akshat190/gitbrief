@@ -3,9 +3,9 @@
 from abc import ABC, abstractmethod
 from typing import Dict, List
 
-from gitbrief.ai.providers.ollama import OllamaProvider
-from gitbrief.ai.providers.openai import OpenAIProvider
-from gitbrief.ai.providers.anthropic import AnthropicProvider
+from commitpilot.ai.providers.ollama import OllamaProvider
+from commitpilot.ai.providers.openai import OpenAIProvider
+from commitpilot.ai.providers.anthropic import AnthropicProvider
 
 
 class BaseProvider(ABC):

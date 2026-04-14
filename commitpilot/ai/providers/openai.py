@@ -8,7 +8,7 @@ from typing import Dict, List
 
 import requests
 
-from gitbrief.core.utils import get_config_value
+from commitpilot.core.utils import get_config_value
 
 
 class OpenAIProvider:
@@ -60,7 +60,7 @@ class OpenAIProvider:
                 "next_steps": [],
             }
 
-        from gitbrief.ai.prompts import get_summarization_prompt
+        from commitpilot.ai.prompts import get_summarization_prompt
 
         prompt = get_summarization_prompt(commits)
         try:
@@ -81,7 +81,7 @@ class OpenAIProvider:
                 "blockers": ["OpenAI API key not set"],
             }
 
-        from gitbrief.ai.prompts import get_standup_prompt
+        from commitpilot.ai.prompts import get_standup_prompt
 
         prompt = get_standup_prompt(commits)
         try:

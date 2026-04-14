@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
-name = "gitbrief"
-version = "0.4.0"
+name = "commitpilot"
+version = "0.1.0"
 description = "Your daily developer standup - powered by Git history"
 readme = "README.md"
 license = {text = "MIT"}
@@ -16,7 +16,6 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Console",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
@@ -45,24 +44,16 @@ anthropic = ["anthropic>=0.18.0"]
 openai = ["openai>=1.0.0"]
 
 [project.scripts]
-gitbrief = "gitbrief.cli:app"
+commitpilot = "commitpilot.cli:app"
 
 [project.urls]
-Homepage = "https://github.com/Akshat190/gitbrief"
-Repository = "https://github.com/Akshat190/gitbrief"
-Issues = "https://github.com/Akshat190/gitbrief/issues"
+Homepage = "https://github.com/Akshat190/commitpilot"
+Repository = "https://github.com/Akshat190/commitpilot"
+Issues = "https://github.com/Akshat190/commitpilot/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["gitbrief*"]
+include = ["commitpilot*"]
 
 [tool.setuptools.package-data]
-gitbrief = ["*.json"]
-
-[tool.black]
-line-length = 100
-target-version = ["py310"]
-
-[tool.ruff]
-line-length = 100
-target-version = "py310"
+commitpilot = ["*.json"]
